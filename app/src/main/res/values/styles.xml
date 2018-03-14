@@ -11,5 +11,14 @@
     <declare-styleable name="PagerIndicatorView">
         <attr name="indicator_count" format="integer"/>
     </declare-styleable>
-
+    <declare-styleable name="VariableDirectionProgressbar">
+        <attr name="progress_direction" format="integer"/>
+        <attr name="progress_front_color" format="color"/>
+        <attr name="progress_behind_color" format="color"/>
+        <attr name="progress_thumb_color" format="color"/>
+        <attr name="total_progress" format="integer"/>
+        <attr name="progress" format="integer"/>
+        <attr name="thumb_visble" format="boolean"/>
+        <attr name="thumb_width" format="integer"/>
+    </declare-styleable>
 </resources>

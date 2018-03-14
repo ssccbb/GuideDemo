@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="indicator_width" >15dp</dimen>
+    <integer name="VERTICAL">0</integer>
+    <integer name="HORIZATAL">1</integer>
 </resources>

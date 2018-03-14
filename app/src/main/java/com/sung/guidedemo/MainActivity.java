@@ -38,7 +38,16 @@ public class MainActivity extends AppCompatActivity {
         fragmentss.add(fragment3);
         fragmentss.add(fragment4);
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),fragmentss);
+
         mIndicator.setPagerCount(fragmentss.size());
+        mIndicator.addOnIndicatorClickListener(new PagerIndicatorView.onIndicatorClickListener() {
+            @Override
+            public void onIndicatorClick(int position) {
+                currentPosition = position;
+                mPager.setCurrentItem(currentPosition,true);
+            }
+        });
+
         mPager.setAdapter(adapter);
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
