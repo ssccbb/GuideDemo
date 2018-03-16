@@ -1,4 +1,4 @@
-package com.sung.guidedemo;
+package com.sung.guidedemo.view;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -12,6 +12,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.sung.guidedemo.R;
 
 /**
  * Created by sung on 2018/3/14.

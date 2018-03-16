@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.sung.guidedemo.view.VariableDirectionProgressbar;
+
 
 /**
  * A simple {@link Fragment} subclass.

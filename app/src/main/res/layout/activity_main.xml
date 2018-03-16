@@ -4,19 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorAccent"
+    android:background="@drawable/bg_gradient"
     tools:context="com.sung.guidedemo.MainActivity">
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
     <LinearLayout
+        android:paddingBottom="100dp"
         android:gravity="center_vertical"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="110dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.sung.guidedemo.PagerIndicatorView
+        android:layout_height="200dp">
+        <com.sung.guidedemo.view.PagerIndicatorView
             android:id="@+id/pi_indicator"
             android:layout_marginLeft="40dp"
             android:layout_width="wrap_content"

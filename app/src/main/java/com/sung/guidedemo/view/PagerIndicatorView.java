@@ -1,4 +1,4 @@
-package com.sung.guidedemo;
+package com.sung.guidedemo.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.sung.guidedemo.R;
 
 /**
  * Created by sung on 2018/3/13.

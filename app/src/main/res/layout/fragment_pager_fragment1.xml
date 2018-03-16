@@ -2,8 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:paddingBottom="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_gradient"
     tools:context="com.sung.guidedemo.PagerFragment1">
 
     <TextView
@@ -32,8 +33,8 @@
         android:layout_marginTop="150dp"
         android:background="@drawable/bg_card"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
-        <com.sung.guidedemo.VariableDirectionProgressbar
+        android:layout_height="match_parent">
+        <com.sung.guidedemo.view.VariableDirectionProgressbar
             android:layout_marginTop="60dp"
             android:id="@+id/vpb_progress1"
             android:layout_width="0dp"
@@ -46,7 +47,7 @@
             app:progress_behind_color="#f6f4fa"
             app:progress_front_color="#f7cbe4"
             app:progress_thumb_color="#ef8cc2"/>
-        <com.sung.guidedemo.VariableDirectionProgressbar
+        <com.sung.guidedemo.view.VariableDirectionProgressbar
             android:layout_marginTop="60dp"
             android:id="@+id/vpb_progress2"
             android:layout_width="0dp"
@@ -59,7 +60,7 @@
             app:progress_behind_color="#f6f4fa"
             app:progress_front_color="#c3acf9"
             app:progress_thumb_color="#9f78f6"/>
-        <com.sung.guidedemo.VariableDirectionProgressbar
+        <com.sung.guidedemo.view.VariableDirectionProgressbar
             android:layout_marginTop="60dp"
             android:id="@+id/vpb_progress3"
             android:layout_width="0dp"
@@ -72,7 +73,7 @@
             app:progress_behind_color="#f6f4fa"
             app:progress_front_color="#c1ddfa"
             app:progress_thumb_color="#83bdf8"/>
-        <com.sung.guidedemo.VariableDirectionProgressbar
+        <com.sung.guidedemo.view.VariableDirectionProgressbar
             android:layout_marginTop="60dp"
             android:id="@+id/vpb_progress4"
             android:layout_width="0dp"
