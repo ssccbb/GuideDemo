@@ -1,139 +1,54 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@android:color/transparent"
     android:paddingBottom="200dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp"
+    android:orientation="vertical"
+    android:gravity="bottom"
     tools:context="com.sung.guidedemo.PagerFragment1">
-
     <TextView
-        android:text="个人信息填写"
-        android:id="@+id/tittle"
+        android:id="@+id/tv_anim_1"
         android:textSize="25sp"
-        android:layout_marginTop="80dp"
+        android:text="Hello"
+        android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:layout_marginLeft="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
-        android:text="完整的信息将使你脱颖而出"
-        android:layout_below="@+id/tittle"
-        android:textSize="13sp"
+        android:id="@+id/tv_anim_2"
+        android:textSize="25sp"
+        android:text="欢迎来到艺人经纪区"
+        android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:layout_marginLeft="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:id="@+id/ll_container"
+        android:id="@+id/ll_anim_3"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="150dp"
-        android:background="@drawable/bg_card"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.sung.guidedemo.view.VariableDirectionProgressbar
-            android:layout_marginTop="60dp"
-            android:id="@+id/vpb_progress1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="200dp"
-            app:progress_direction="@integer/VERTICAL"
-            app:total_progress="100"
-            app:progress="60"
-            app:thumb_width="20"
-            app:progress_behind_color="#f6f4fa"
-            app:progress_front_color="#f7cbe4"
-            app:progress_thumb_color="#ef8cc2"/>
-        <com.sung.guidedemo.view.VariableDirectionProgressbar
-            android:layout_marginTop="60dp"
-            android:id="@+id/vpb_progress2"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="200dp"
-            app:progress_direction="@integer/VERTICAL"
-            app:total_progress="100"
-            app:progress="30"
-            app:thumb_width="20"
-            app:progress_behind_color="#f6f4fa"
-            app:progress_front_color="#c3acf9"
-            app:progress_thumb_color="#9f78f6"/>
-        <com.sung.guidedemo.view.VariableDirectionProgressbar
-            android:layout_marginTop="60dp"
-            android:id="@+id/vpb_progress3"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="200dp"
-            app:progress_direction="@integer/VERTICAL"
-            app:total_progress="100"
-            app:progress="70"
-            app:thumb_width="20"
-            app:progress_behind_color="#f6f4fa"
-            app:progress_front_color="#c1ddfa"
-            app:progress_thumb_color="#83bdf8"/>
-        <com.sung.guidedemo.view.VariableDirectionProgressbar
-            android:layout_marginTop="60dp"
-            android:id="@+id/vpb_progress4"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="200dp"
-            app:progress_direction="@integer/VERTICAL"
-            app:total_progress="100"
-            app:progress="10"
-            app:thumb_width="20"
-            app:progress_behind_color="#f6f4fa"
-            app:progress_front_color="#f7dfb6"
-            app:progress_thumb_color="#f6c980"/>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_alignTop="@+id/ll_container">
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
         <TextView
-            android:textSize="16sp"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:id="@+id/tv_value1"
-            android:textColor="#ef8cc2"
-            android:textStyle="bold"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textSize="16sp"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:id="@+id/tv_value2"
-            android:textColor="#9f78f6"
-            android:textStyle="bold"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textSize="16sp"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:id="@+id/tv_value3"
-            android:textColor="#83bdf8"
-            android:textStyle="bold"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textSize="16sp"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:id="@+id/tv_value4"
-            android:textColor="#f6c980"
-            android:textStyle="bold"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"
+            android:layout_marginLeft="10dp"
+            android:text="收集优质商家，在城市中快速匹配到优质高薪任务"
+            android:layout_width="250dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
-</RelativeLayout>
+    <View
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#10ffffff"/>
+</LinearLayout>

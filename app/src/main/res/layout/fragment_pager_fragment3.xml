@@ -1,9 +1,139 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="200dp"
     android:background="@android:color/transparent"
     tools:context="com.sung.guidedemo.PagerFragment3">
+    <TextView
+        android:text="个人信息填写"
+        android:id="@+id/tittle"
+        android:textSize="25sp"
+        android:layout_marginTop="80dp"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="完整的信息将使你脱颖而出"
+        android:layout_below="@+id/tittle"
+        android:textSize="13sp"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/bg_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.sung.guidedemo.view.VariableDirectionProgressbar
+            android:layout_marginTop="60dp"
+            android:id="@+id/vpb_progress1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            app:progress_direction="@integer/VERTICAL"
+            app:total_progress="100"
+            app:progress="60"
+            app:thumb_width="20"
+            app:progress_behind_color="#f6f4fa"
+            app:progress_front_color="#f7cbe4"
+            app:progress_thumb_color="#ef8cc2"/>
+        <com.sung.guidedemo.view.VariableDirectionProgressbar
+            android:layout_marginTop="60dp"
+            android:id="@+id/vpb_progress2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            app:progress_direction="@integer/VERTICAL"
+            app:total_progress="100"
+            app:progress="30"
+            app:thumb_width="20"
+            app:progress_behind_color="#f6f4fa"
+            app:progress_front_color="#c3acf9"
+            app:progress_thumb_color="#9f78f6"/>
+        <com.sung.guidedemo.view.VariableDirectionProgressbar
+            android:layout_marginTop="60dp"
+            android:id="@+id/vpb_progress3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            app:progress_direction="@integer/VERTICAL"
+            app:total_progress="100"
+            app:progress="70"
+            app:thumb_width="20"
+            app:progress_behind_color="#f6f4fa"
+            app:progress_front_color="#c1ddfa"
+            app:progress_thumb_color="#83bdf8"/>
+        <com.sung.guidedemo.view.VariableDirectionProgressbar
+            android:layout_marginTop="60dp"
+            android:id="@+id/vpb_progress4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            app:progress_direction="@integer/VERTICAL"
+            app:total_progress="100"
+            app:progress="10"
+            app:thumb_width="20"
+            app:progress_behind_color="#f6f4fa"
+            app:progress_front_color="#f7dfb6"
+            app:progress_thumb_color="#f6c980"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignTop="@+id/ll_container">
+        <TextView
+            android:textSize="16sp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:id="@+id/tv_value1"
+            android:textColor="#ef8cc2"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="16sp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:id="@+id/tv_value2"
+            android:textColor="#9f78f6"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="16sp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:id="@+id/tv_value3"
+            android:textColor="#83bdf8"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="16sp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:id="@+id/tv_value4"
+            android:textColor="#f6c980"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

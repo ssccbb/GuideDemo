@@ -1,6 +1,9 @@
 package com.sung.guidedemo;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,27 +21,10 @@ import com.sung.guidedemo.view.VariableDirectionProgressbar;
  * A simple {@link Fragment} subclass.
  */
 public class PagerFragment1 extends Fragment {
-    private TextView value1,value2,value3,value4;
-    private Handler uiHandler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.arg1){
-                case 0:
-                    value1.setText(""+msg.arg2);
-                    break;
-                case 1:
-                    value2.setText(""+msg.arg2);
-                    break;
-                case 2:
-                    value3.setText(""+msg.arg2);
-                    break;
-                case 3:
-                    value4.setText(""+msg.arg2);
-                    break;
-            }
-        }
-    };
+    private View rootView;
+    private View anim1;
+    private View anim2;
+    private View anim3;
 
     public PagerFragment1() {
         // Required empty public constructor
@@ -48,63 +34,71 @@ public class PagerFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pager_fragment1, container, false);
+        rootView = inflater.inflate(R.layout.fragment_pager_fragment1, container, false);
+        return rootView;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        anim1 = rootView.findViewById(R.id.tv_anim_1);
+        anim2 = rootView.findViewById(R.id.tv_anim_2);
+        anim3 = rootView.findViewById(R.id.ll_anim_3);
+    }
 
-        value1 = view.findViewById(R.id.tv_value1);
-        value2 = view.findViewById(R.id.tv_value2);
-        value3 = view.findViewById(R.id.tv_value3);
-        value4 = view.findViewById(R.id.tv_value4);
+    @Override
+    public void onResume() {
+        super.onResume();
+        startAnim();
+    }
 
-        VariableDirectionProgressbar progressbar1 = view.findViewById(R.id.vpb_progress1);
-        VariableDirectionProgressbar progressbar2 = view.findViewById(R.id.vpb_progress2);
-        VariableDirectionProgressbar progressbar3 = view.findViewById(R.id.vpb_progress3);
-        VariableDirectionProgressbar progressbar4 = view.findViewById(R.id.vpb_progress4);
+    public void startAnim(){
+        if (anim1 == null || anim2 == null || anim3 == null)
+            return;
 
-        value1.setText(""+progressbar1.getCurrentProgress());
-        value2.setText(""+progressbar2.getCurrentProgress());
-        value3.setText(""+progressbar3.getCurrentProgress());
-        value4.setText(""+progressbar4.getCurrentProgress());
+        anim(anim1,100);
+        anim(anim2,300);
+        anim(anim3,600);
+    }
 
-        progressbar1.addOnProgressChangeListener(new VariableDirectionProgressbar.OnProgressChangeListener() {
+    private void anim(final View view, long delay){
+        float targetX = view.getX();
+        float targetY = view.getY();
+
+        float begainX = targetX + 100;
+        float begainY = targetY + 100;
+
+        view.setVisibility(View.INVISIBLE);
+        view.clearAnimation();
+
+        ObjectAnimator alpha = ObjectAnimator.ofFloat(view,"alpha",0,1,1);
+        alpha.setDuration(2000);
+        alpha.setStartDelay(delay);
+        ObjectAnimator translation = ObjectAnimator.ofFloat(view, "translationY", begainY, targetY,targetY);
+        translation.setDuration(2000);
+        translation.setStartDelay(delay);
+
+        translation.addListener(new Animator.AnimatorListener() {
             @Override
-            public void onProgressChange(int progress) {
-                Message msg = new Message();
-                msg.arg1 = 0;
-                msg.arg2 = progress;
-                uiHandler.handleMessage(msg);
+            public void onAnimationStart(Animator animation) {
+                view.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
             }
         });
-        progressbar2.addOnProgressChangeListener(new VariableDirectionProgressbar.OnProgressChangeListener() {
-            @Override
-            public void onProgressChange(int progress) {
-                Message msg = new Message();
-                msg.arg1 = 1;
-                msg.arg2 = progress;
-                uiHandler.handleMessage(msg);
-            }
-        });
-        progressbar3.addOnProgressChangeListener(new VariableDirectionProgressbar.OnProgressChangeListener() {
-            @Override
-            public void onProgressChange(int progress) {
-                Message msg = new Message();
-                msg.arg1 = 2;
-                msg.arg2 = progress;
-                uiHandler.handleMessage(msg);
-            }
-        });
-        progressbar4.addOnProgressChangeListener(new VariableDirectionProgressbar.OnProgressChangeListener() {
-            @Override
-            public void onProgressChange(int progress) {
-                Message msg = new Message();
-                msg.arg1 = 3;
-                msg.arg2 = progress;
-                uiHandler.handleMessage(msg);
-            }
-        });
+
+        alpha.start();
+        translation.start();
     }
 }

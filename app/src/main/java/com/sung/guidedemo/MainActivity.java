@@ -1,5 +1,6 @@
 package com.sung.guidedemo;
 
+import android.animation.ObjectAnimator;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mNext = findViewById(R.id.btn_next);
 
         final List<Fragment> fragmentss = new ArrayList<>();
-        PagerFragment1 fragment1 = new PagerFragment1();
+        final PagerFragment1 fragment1 = new PagerFragment1();
         PagerFragment2 fragment2 = new PagerFragment2();
         PagerFragment3 fragment3 = new PagerFragment3();
         PagerFragment4 fragment4 = new PagerFragment4();
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+                currentPosition = position;
                 mIndicator.setSelectPosition(position);
             }
 
@@ -85,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         mNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnAnim();
+
                 currentPosition++;
                 if (currentPosition >= fragmentss.size()){
                     currentPosition = 0;
@@ -92,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
                 mPager.setCurrentItem(currentPosition,true);
             }
         });
+    }
+
+    private void btnAnim(){
+        ObjectAnimator rotation = ObjectAnimator.ofFloat(mNext,"rotation",0,359);
+        rotation.setDuration(200);
+        rotation.start();
     }
 
     private void showSplashFragment(){

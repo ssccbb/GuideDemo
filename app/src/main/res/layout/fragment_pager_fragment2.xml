@@ -1,9 +1,79 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="200dp"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp"
     android:background="@android:color/transparent"
     tools:context="com.sung.guidedemo.PagerFragment2">
-
-</FrameLayout>
+    <TextView
+        android:text="请选择你的性别"
+        android:id="@+id/tv_tittle"
+        android:textSize="25sp"
+        android:layout_marginTop="80dp"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="我们将根据性别来匹配任务，选定后无法修改"
+        android:id="@+id/tv_subtittle"
+        android:textSize="13sp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/ll_avatar_woman"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/circle_white"
+                android:layout_width="120dp"
+                android:layout_height="120dp" />
+            <TextView
+                android:layout_marginTop="8dp"
+                android:text="女"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" />
+        <LinearLayout
+            android:id="@+id/ll_avatar_man"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/circle_white"
+                android:layout_width="120dp"
+                android:layout_height="120dp" />
+            <TextView
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp"
+                android:text="男"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:id="@+id/line"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#10ffffff"/>
+</LinearLayout>
